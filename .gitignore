@@ -9,4 +9,3 @@ dune-project
 
 # these files are generated with pesy, do not commit them
 merkle.install
-merkle.opam
