@@ -1,0 +1,53 @@
+{
+  "name": "merkle",
+  "esy": { "build": "dune build -p #{self.name}" },
+  "license": "MIT",
+  "scripts": {
+    "test": "esy x TreeTest.exe",
+    "format": "dune build @fmt --auto-promote",
+    "doc": "ocamldoc -html -i library -d doc"
+  },
+  "buildDirs": {
+    "executable": {
+      "name": "MerkleTree.exe",
+      "bin": "Index.re",
+      "imports": [ "Merkle = require('../library')" ]
+    },
+    "library": {},
+    "tests": {
+      "name": "TreeTest.exe",
+      "bin": "tree_test.re",
+      "imports": [
+        "Merkle = require('../library')", "Qcheck = require('qcheck')",
+        "Alcotest = require('alcotest')",
+        "Qcheckalcotest = require('qcheck-alcotest')"
+      ]
+    }
+  },
+  "dependencies": {
+    "@opam/alcotest": "1.4.0",
+    "@opam/dune": "*",
+    "@opam/ez_hash": "0.2.0",
+    "@opam/ounit2": "2.2.4",
+    "@opam/qcheck": "0.18",
+    "@opam/qcheck-alcotest": "0.18",
+    "@pesy/esy-pesy": "0.1.0-alpha.5",
+    "ocaml": "4.11.x"
+  },
+  "devDependencies": {
+    "@esy-ocaml/rtop": "*",
+    "@opam/menhir": "20210419",
+    "@opam/ocaml-lsp-server": "*",
+    "@opam/ocamlformat": "0.19.0",
+    "@opam/ocamlformat-rpc": "*",
+    "@opam/utop": "*",
+    "@reason-native/rely": "*",
+    "bsdoc": "^0.2.0"
+  },
+  "resolutions": {
+    "@esy-ocaml/rtop":
+      "ManasJayanth/reason:rtop.json#6dbbb3d51bab4512592b09cdc08103a5e3ac9e59",
+    "ocaml":
+      "github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae"
+  }
+}

@@ -1,0 +1,12 @@
+_build
+_esy
+_node_modules
+
+# dune files are generated with pesy, so I don't commit them
+dune
+**/dune
+dune-project
+
+# these files are generated with pesy, do not commit them
+merkle.install
+merkle.opam
