@@ -107,6 +107,22 @@ let different_tree =
     |> Result.value(~default=false)
   );
 
+let append_to_tree =
+  Test.make(
+    ~name=
+      "A tree to which data was appended should validate the dataset of originl + appended data",
+    QCheck.(
+      triple(make(valid_data), list(make(valid_data)), make(valid_data))
+    ),
+    ((head, tail, to_append)) =>
+    initialize_tree(hash, head, tail)
+    >=> append(to_append)
+    |> Result.map(
+         validate_data_with_tree(head, List.append(tail, [to_append])),
+       )
+    |> Result.value(~default=false)
+  );
+
 let () = {
   let size = [QCheck_alcotest.to_alcotest(size)];
 
@@ -119,8 +135,15 @@ let () = {
   let validate =
     List.map(QCheck_alcotest.to_alcotest, [validate_tree, different_tree]);
 
+  let append = [QCheck_alcotest.to_alcotest(append_to_tree)];
+
   Alcotest.run(
     "merkle_tree_lib",
-    [("initialize", initialize), ("size", size), ("validate", validate)],
+    [
+      ("initialize", initialize),
+      ("size", size),
+      ("validate", validate),
+      ("append", append),
+    ],
   );
 };
