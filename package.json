@@ -1,17 +1,19 @@
 {
   "name": "merkle",
-  "esy": { "build": "dune build -p #{self.name}" },
+  "esy": {
+    "build": "dune build -p #{self.name}"
+  },
   "license": "MIT",
   "scripts": {
     "test": "esy x TreeTest.exe",
     "format": "dune build @fmt --auto-promote",
-    "doc": "ocamldoc -html -i library -d doc"
+    "doc": "esy build dune build @doc"
   },
   "buildDirs": {
     "executable": {
       "name": "MerkleTree.exe",
       "bin": "Index.re",
-      "imports": [ "Merkle = require('../library')" ]
+      "imports": ["Merkle = require('../library')"]
     },
     "library": {},
     "tests": {
@@ -32,7 +34,8 @@
     "@opam/qcheck": "0.18",
     "@opam/qcheck-alcotest": "0.18",
     "@pesy/esy-pesy": "0.1.0-alpha.5",
-    "ocaml": "4.11.x"
+    "ocaml": "4.11.x",
+    "@opam/odoc": "1.5.3"
   },
   "devDependencies": {
     "@esy-ocaml/rtop": "*",
@@ -40,14 +43,10 @@
     "@opam/ocaml-lsp-server": "*",
     "@opam/ocamlformat": "0.19.0",
     "@opam/ocamlformat-rpc": "*",
-    "@opam/utop": "*",
-    "@reason-native/rely": "*",
-    "bsdoc": "^0.2.0"
+    "@opam/utop": "*"
   },
   "resolutions": {
-    "@esy-ocaml/rtop":
-      "ManasJayanth/reason:rtop.json#6dbbb3d51bab4512592b09cdc08103a5e3ac9e59",
-    "ocaml":
-      "github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae"
+    "@esy-ocaml/rtop": "ManasJayanth/reason:rtop.json#6dbbb3d51bab4512592b09cdc08103a5e3ac9e59",
+    "ocaml": "github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae"
   }
 }

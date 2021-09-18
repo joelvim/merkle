@@ -1,5 +1,5 @@
 {
-  "checksum": "c55b76c366de40941940c8f45729aa3c",
+  "checksum": "ab0b9155c6b466dac35cc10d15372106",
   "root": "merkle@link-dev:./package.json",
   "node": {
     "ocaml@github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae@d41d8cd9": {
@@ -33,13 +33,12 @@
         "@pesy/esy-pesy@0.1.0-alpha.5@d41d8cd9",
         "@opam/qcheck-alcotest@opam:0.18@7b258272",
         "@opam/qcheck@opam:0.18@0e7e7278",
-        "@opam/ounit2@opam:2.2.4@1877225e",
+        "@opam/ounit2@opam:2.2.4@1877225e", "@opam/odoc@opam:1.5.3@29f53af8",
         "@opam/ez_hash@opam:0.2.0@ec6603e8",
         "@opam/dune@opam:2.9.1@1e504822",
         "@opam/alcotest@opam:1.4.0@827862b4"
       ],
       "devDependencies": [
-        "bsdoc@0.2.0@d41d8cd9", "@reason-native/rely@3.2.1@d41d8cd9",
         "@opam/utop@opam:2.8.0@76625c33",
         "@opam/ocamlformat-rpc@opam:0.19.0@a59d592e",
         "@opam/ocamlformat@opam:0.19.0@25e59922",
@@ -47,20 +46,6 @@
         "@opam/menhir@opam:20210419@462bec41",
         "@esy-ocaml/rtop@github:ManasJayanth/reason:rtop.json#6dbbb3d51bab4512592b09cdc08103a5e3ac9e59@d41d8cd9"
       ]
-    },
-    "bsdoc@0.2.0@d41d8cd9": {
-      "id": "bsdoc@0.2.0@d41d8cd9",
-      "name": "bsdoc",
-      "version": "0.2.0",
-      "source": {
-        "type": "install",
-        "source": [
-          "archive:https://registry.npmjs.org/bsdoc/-/bsdoc-0.2.0.tgz#sha1:21d78bce06a93b3c5c6b6212c2c9fb55f5caf0cb"
-        ]
-      },
-      "overrides": [],
-      "dependencies": [],
-      "devDependencies": []
     },
     "@reason-native/rely@3.2.1@d41d8cd9": {
       "id": "@reason-native/rely@3.2.1@d41d8cd9",
@@ -1039,6 +1024,40 @@
       "devDependencies": [
         "ocaml@github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae@d41d8cd9",
         "@opam/result@opam:1.5@1c6a6533", "@opam/dune@opam:2.9.1@1e504822",
+        "@opam/astring@opam:0.8.5@1300cee8"
+      ]
+    },
+    "@opam/odoc@opam:1.5.3@29f53af8": {
+      "id": "@opam/odoc@opam:1.5.3@29f53af8",
+      "name": "@opam/odoc",
+      "version": "opam:1.5.3",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/sha256/f2/f2b76f811658c4b52cb48ac4ffc2ec37cedd2a805111c7f8ec20f8f36b8bbf45#sha256:f2b76f811658c4b52cb48ac4ffc2ec37cedd2a805111c7f8ec20f8f36b8bbf45",
+          "archive:https://github.com/ocaml/odoc/releases/download/1.5.3/odoc-1.5.3.tbz#sha256:f2b76f811658c4b52cb48ac4ffc2ec37cedd2a805111c7f8ec20f8f36b8bbf45"
+        ],
+        "opam": {
+          "name": "odoc",
+          "version": "1.5.3",
+          "path": "esy.lock/opam/odoc.1.5.3"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae@d41d8cd9",
+        "@opam/tyxml@opam:4.5.0@0a609297", "@opam/result@opam:1.5@1c6a6533",
+        "@opam/fpath@opam:0.7.3@674d8125", "@opam/dune@opam:2.9.1@1e504822",
+        "@opam/cppo@opam:1.6.7@57a6d52c",
+        "@opam/cmdliner@opam:1.0.4@93208aac",
+        "@opam/astring@opam:0.8.5@1300cee8",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [
+        "ocaml@github:esy-ocaml/ocaml#7af70dea28d218eb53bce7966e24dfe6762862ae@d41d8cd9",
+        "@opam/tyxml@opam:4.5.0@0a609297", "@opam/result@opam:1.5@1c6a6533",
+        "@opam/fpath@opam:0.7.3@674d8125", "@opam/dune@opam:2.9.1@1e504822",
+        "@opam/cmdliner@opam:1.0.4@93208aac",
         "@opam/astring@opam:0.8.5@1300cee8"
       ]
     },
